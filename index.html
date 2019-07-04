@@ -1,0 +1,205 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>azs</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="css/index.css">
+    <script src="jQ/jquery-3.3.1.js"></script>
+</head>
+<body>
+<!--Навигация-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">
+        <i class="fa fa-car" aria-hidden="true"></i>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportContent" aria-controls="navbarSupportContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+<div class="collapse navbar-collapse sticky-top" id="navbarSupportContent">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a href="ceny%20na%20ATHS.html" class="nav-link">Цены на АЗС</a>
+        </li>
+        <li class="nav-item">
+            <a href="marshrut.html" class="nav-link">Проложить маршрут</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">О проэкте</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">Контакты</a>
+        </li>
+    </ul>
+        <button class="btn btn-outline-success my-2 my-sm-0 nav-link" data-toggle="modal" data-target="#exampleModal">Вход</button>
+</div>
+</nav>
+<!--Навигация--><!--Навигация--><!--Навигация--><!--Навигация--><!--Навигация--><!--Навигация-->
+<div class="container-fluid">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-xs-12 col-sm-4 col-lg-2 calc-gass">
+                <div class="sign">
+                    lOGO
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid">
+    <div class="container-fluid">
+        <div class="row justify-content-between">
+            <div class="col-xs-12 col-sm-4 col-lg-2 calc-gass">
+                <h1>Калькулятор</h1>
+                <table>
+                    <tr>
+                        <td class="td-label">Средний расход топлива:</td>
+                        <td class="td-input"><input type="text" class="input-off" id="sredniy_raskhod_topliva"></td>
+                    </tr>
+                    <tr>
+                        <td class="td-label">Растояние:</td>
+                        <td class="td-input"><input type="text" class="input-off" id="distance"></td>
+                    </tr>
+                    <tr>
+                        <td class="td-label">Цена/L:</td>
+                        <td class="td-input"><input type="text" class="input-off" id="coast_L"></td>
+                    </tr>
+                    <tr>
+                        <td class="td-label">Число людей:</td>
+                        <td class="td-input"><input type="text" class="input-off" id="how_many_people"></td>
+                    </tr>
+                </table>
+                <hr>
+                <button class="btn btn-secondary btn-lg btn-block" onclick="btnGet()">Рассчитать</button>
+                <hr>
+                <table>
+                    <tr>
+                        <td class="td-label">Необходимое количество топлива:</td>
+                        <td class="td-span"><span class="a"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="td-label">Стоимость поездки:</td>
+                        <td class="td-span"><span class="b"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="td-label">На человека:</td>
+                        <td class="td-span"><span class="c"></span></td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="col-xs-12 col-sm-4 col-lg-6 car-shar">
+                <h1>Google maps</h1>
+                <div id='map'></div>
+
+            </div>
+            <div class="col-xs-12 col-sm-4 col-lg-4 bg_div coast-gass">
+                <div class="container containerPaddingNone">
+                    <h1>Цены на топливо</h1>
+                    <div class="result gasres">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Gas station</th>
+                                <th>A96</th>
+                                <th>A95</th>
+                                <th>A92</th>
+                                <th>DT</th>
+                                <th>LPG</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                            <tfoot>
+
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid footer">
+
+</div>
+
+<!--ВХОД-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-dark">
+                <h5 class="modal-title text-center" id="exampleModalLabel">ВХОД</h5>
+                <button class="btn btn-outline-success" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="madal-body">
+                <form action="">
+                    <div class="form-froup">
+                        <label for="exampleInputEmail">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email" required>
+                        <label for="exampleInputPass">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPass" placeholder="Password" required>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            Запомнить меня
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer bg-dark">
+                <button class="btn btn-outline-success" data-dismiss="modal" type="button">Вход</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="container footer">
+        <ul>
+            <li><a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-telegram fa-lg" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoidHN5c3ZsYWRpc2xhdiIsImEiOiJjaXo2bnZiNjEwMGs4MzNrZHNqM2swdnc0In0.7plxNXoEpZB1w0ItpAn5qw';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11'
+    });
+</script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>
