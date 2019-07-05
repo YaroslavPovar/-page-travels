@@ -83,7 +83,9 @@ div .bg_div{
 }
 .footer ul{
     display: flex;
-    margin-top: 10px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 .footer ul li{
     list-style: none;
