@@ -98,9 +98,12 @@ div .bg_div{
 .footer ul li a .fa:hover{
     transform: scale(1.5);
     transition: 80ms;
+    color: #2a8843;
+
 }
 .footer ul li a .fa{
     transition: 100ms;
+    color: white;
 }
 /*----------------------------------*/
 

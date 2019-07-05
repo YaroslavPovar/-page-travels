@@ -6,8 +6,8 @@
     <title>azs</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
+<!--    <script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>-->
+<!--    <link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />-->
     <link rel="stylesheet" href="css/index.css">
     <script src="js/jquery-3.3.1.js"></script>
 </head>
@@ -97,7 +97,8 @@
             </div>
             <div class="col-xs-12 col-sm-4 col-lg-6 car-shar">
                 <h1>Google maps</h1>
-                <div id='map'></div>
+                <div id='map'><iframe class="g-maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5440401.950425513!2d26.689956738919847!3d48.255785946278884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d1d9c154700e8f%3A0x1068488f64010!2z0KPQutGA0LDQuNC90LA!5e0!3m2!1sru!2sua!4v1561925296251!5m2!1sru!2sua" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
 
             </div>
             <div class="col-xs-12 col-sm-4 col-lg-4 bg_div coast-gass">
@@ -119,7 +120,7 @@
 
                             </tbody>
                             <tfoot>
-
+                                <th>Минимальная цена</th>
                             </tfoot>
                         </table>
                     </div>
@@ -190,13 +191,13 @@
 
 
 
-<script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoidHN5c3ZsYWRpc2xhdiIsImEiOiJjaXo2bnZiNjEwMGs4MzNrZHNqM2swdnc0In0.7plxNXoEpZB1w0ItpAn5qw';
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11'
-    });
-</script>
+<!--<script>-->
+<!--    mapboxgl.accessToken = 'pk.eyJ1IjoidHN5c3ZsYWRpc2xhdiIsImEiOiJjaXo2bnZiNjEwMGs4MzNrZHNqM2swdnc0In0.7plxNXoEpZB1w0ItpAn5qw';-->
+<!--    var map = new mapboxgl.Map({-->
+<!--        container: 'map',-->
+<!--        style: 'mapbox://styles/mapbox/streets-v11'-->
+<!--    });-->
+<!--</script>-->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/index.js"></script>
 
