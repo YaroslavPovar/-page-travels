@@ -1,5 +1,5 @@
 body, .modal-content{
-    background-color: rgba(254, 248, 99, 0.9);
+    background-color: #fff;
 }
 
 h5{
@@ -83,7 +83,9 @@ div .bg_div{
 }
 .footer ul{
     display: flex;
-    margin-top: 10px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 .footer ul li{
     list-style: none;
