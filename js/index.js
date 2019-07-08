@@ -27,7 +27,7 @@ function btnGet() {
 
 
 }
-
+gasoline = [];
 $.get( "https://ironpeak.ua/petrol-price/", function( data ) {
     if(data) {
         data['data'].forEach(element => {
@@ -38,6 +38,7 @@ $.get( "https://ironpeak.ua/petrol-price/", function( data ) {
             var tda92 = document.createElement("td");
             var tdDT = document.createElement("td");
             var tdLPG = document.createElement("td");
+            gasoline.push(tda96);
 
             $(td).text(element['gasStation']);
             $(tda96).text(element['a96']);
@@ -57,3 +58,21 @@ $.get( "https://ironpeak.ua/petrol-price/", function( data ) {
         });
     }
 });
+
+function logIn() {
+    let checkboxes = $('.checkbox');
+    let checkboxesChecked = []; // можно в массиве их хранить, если нужно использовать
+    for (var index = 0; index < checkboxes.length; index++) {
+        if (checkboxes[index].checked) {
+            checkboxesChecked.push(checkboxes[index].value); // положим в массив выбранный
+            // alert(checkboxes[index].value); // делайте что нужно - это для наглядности
+            for (var i = 0; i < checkboxesChecked.length; i++){
+                if (checkboxesChecked[i] === "A96"){
+                    $('.cass').html(gasoline);
+                }
+            }
+        }
+    }console.log('checkboxesChecked', checkboxesChecked);
+    return checkboxesChecked; // для использования в нужном месте
+
+}

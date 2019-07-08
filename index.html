@@ -29,7 +29,7 @@
             <a href="marshrut.html" class="nav-link">Проложить маршрут</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link">О проэкте</a>
+            <a href="#" class="nav-link">О проекте</a>
         </li>
         <li class="nav-item">
             <a href="#" class="nav-link">Контакты</a>
@@ -77,7 +77,7 @@
                     </tr>
                 </table>
                 <hr>
-                <button class="btn btn-secondary btn-lg btn-block" onclick="btnGet()">Рассчитать</button>
+                <button class="btn btn-outline-success btn-lg btn-block" onclick="btnGet()">Рассчитать</button>
                 <hr>
                 <table>
                     <tr>
@@ -105,22 +105,22 @@
                 <div class="container containerPaddingNone">
                     <h1>Цены на топливо</h1>
                     <div class="result gasres">
-                        <table>
+                        <table class="table-hover table-responsive ">
                             <thead>
                             <tr>
-                                <th>Gas station</th>
-                                <th>A96</th>
-                                <th>A95</th>
-                                <th>A92</th>
-                                <th>DT</th>
-                                <th>LPG</th>
+                                <th scope="col">Gas station</th>
+                                <th scope="col">A96</th>
+                                <th scope="col">A95</th>
+                                <th scope="col">A92</th>
+                                <th scope="col">DT</th>
+                                <th scope="col">LPG</th>
                             </tr>
                             </thead>
                             <tbody>
 
                             </tbody>
                             <tfoot>
-                                <th>Минимальная цена</th>
+                                <tr class="cass"></tr>
                             </tfoot>
                         </table>
                     </div>
@@ -151,16 +151,29 @@
                         <label for="exampleInputPass">Password</label>
                         <input type="password" class="form-control" id="exampleInputPass" placeholder="Password" required>
                     </div>
+                    <span class="modal_span">Пожалуйста, выбирите вид топлива, который Вы предпочитаете</span>
                     <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input">
-                            Запомнить меня
-                        </label>
+                            <table class="table text-center modal_table">
+                                <thead>
+                                    <th scope="col">A96</th>
+                                    <th scope="col">A95</th>
+                                    <th scope="col">A92</th>
+                                    <th scope="col">ДТ</th>
+                                    <th scope="col">Газ</th>
+                                </thead>
+                                <tbody>
+                                    <td><input type="checkbox" class="form-check-input checkboxType modal_input checkbox" value="A96"></td>
+                                    <td><input type="checkbox" class="form-check-input checkboxType modal_input checkbox" value="A95"></td>
+                                    <td><input type="checkbox" class="form-check-input checkboxType modal_input checkbox" value="A92"></td>
+                                    <td><input type="checkbox" class="form-check-input checkboxType modal_input checkbox" value="DT"></td>
+                                    <td><input type="checkbox" class="form-check-input checkboxType modal_input checkbox" value="LPG"></td>
+                                </tbody>
+                            </table>
                     </div>
                 </form>
             </div>
             <div class="modal-footer bg-dark">
-                <button class="btn btn-outline-success" data-dismiss="modal" type="button">Вход</button>
+                <button class="btn btn-outline-success" data-dismiss="modal" type="button" onclick="logIn()">Вход</button>
             </div>
         </div>
     </div>

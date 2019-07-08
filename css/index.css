@@ -108,12 +108,30 @@ div .bg_div{
 /*----------------------------------*/
 
 
+.modal_table{
+    width: 96%;
+    border: 1px solid black;
+}
+.modal_table thead tr th{
+    text-align: center;
+    border: 1px solid;
+}
+.modal_table tbody tr td{
+    text-align: center;
+    border: 1px solid;
+}
+.modal_table input{
+    display: block;
+    margin-left: 5.5%;
+    margin-top: -6px;
+}
+.modal_span{
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}
 
-
-
-
-
-
+/*------------------------------------*/
 
 
 
