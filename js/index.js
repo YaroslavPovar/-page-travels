@@ -68,7 +68,15 @@ function logIn() {
             // alert(checkboxes[index].value); // делайте что нужно - это для наглядности
             for (var i = 0; i < checkboxesChecked.length; i++){
                 if (checkboxesChecked[i] === "A96"){
-                    $('.cass').html(gasoline);
+                    alert(96);
+                }else if (checkboxesChecked[i] === "A95") {
+                    alert(95);
+                }else if (checkboxesChecked[i] === "A92" ) {
+                    alert(92);
+                }else if (checkboxesChecked[i] === "DT") {
+                    alert("DT");
+                }else if (checkboxesChecked[i] === "LPG") {
+                    alert("LPG");
                 }
             }
         }
