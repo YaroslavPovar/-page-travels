@@ -1,4 +1,22 @@
+let minPrice = {
+    "a96": {"gasStation": "", "price": null},
+    "a95": {"gasStation": "", "price": null},
+    "a92": {"gasStation": "", "price": null},
+    "dt": {"gasStation": "", "price": null},
+    "lpg": {"gasStation": "", "price": null},
+};
 
+function setMinPrice(key, el) {
+    if(el[key] !== null) {
+        if(minPrice[key]["price"] === null) {
+            minPrice[key]["gasStation"] = el['gasStation'];
+            minPrice[key]["price"] = el[key];
+        } else if(el['a96'] < minPrice[key]["price"]) {
+            minPrice[key]["gasStation"] = el['gasStation'];
+            minPrice[key]["price"] = el[key];
+        }
+    }
+}
 
 function btnGet() {
     let sredniyRaskhodTopliva = $('#sredniy_raskhod_topliva').val(),
@@ -21,16 +39,19 @@ function btnGet() {
         console.log('dist', diStance);
         console.log('coast', coastL);
         console.log(' howmany', howManyPeople);
-
-
-
-
-
 }
+
 gasoline = [];
 $.get( "https://ironpeak.ua/petrol-price/", function( data ) {
     if(data) {
         data['data'].forEach(element => {
+
+            setMinPrice("a96", element);
+            setMinPrice("a95", element);
+            setMinPrice("a92", element);
+            setMinPrice("dt", element);
+            setMinPrice("lpg", element);
+
             var tr = document.createElement("tr");
             var td = document.createElement("td");
             var tda96 = document.createElement("td");
