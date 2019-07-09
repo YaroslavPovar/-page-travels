@@ -59,7 +59,7 @@ $.get( "https://ironpeak.ua/petrol-price/", function( data ) {
             var tda92 = document.createElement("td");
             var tdDT = document.createElement("td");
             var tdLPG = document.createElement("td");
-            gasoline.push(tda96);
+
 
             $(td).text(element['gasStation']);
             $(tda96).text(element['a96']);
@@ -90,6 +90,10 @@ function logIn() {
             for (var i = 0; i < checkboxesChecked.length; i++){
                 if (checkboxesChecked[i] === "A96"){
                     alert(96);
+                    console.log(minPrice.a96.gasStation);
+                    $(".gasStation").append(minPrice.a96.gasStation).val();
+                    $(".gasPriceCoast").append(minPrice.a96.price).val();
+                    $("#coast_L").html(minPrice.a96.price).val();
                 }else if (checkboxesChecked[i] === "A95") {
                     alert(95);
                 }else if (checkboxesChecked[i] === "A92" ) {

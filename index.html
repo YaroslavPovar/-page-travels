@@ -43,7 +43,7 @@
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-xs-12 col-sm-4 col-lg-2 calc-gass">
-                <div class="sign">
+                <div class="sign container-fluid">
                     lOGO
                 </div>
             </div>
@@ -69,7 +69,8 @@
                     </tr>
                     <tr>
                         <td class="td-label">Цена/L:</td>
-                        <td class="td-input"><input type="text" class="input-off" id="coast_L"></td>
+<!--                        <td class="td-input"><input type="text" class="input-off" id="coast_L"></td>-->
+                        <td><span id="coast_L"></span></td>
                     </tr>
                     <tr>
                         <td class="td-label">Число людей:</td>
@@ -120,7 +121,10 @@
 
                             </tbody>
                             <tfoot>
-                                <tr class="cass"></tr>
+                                <tr>
+                                    <td class="gasStation"></td>
+                                    <td class="gasPriceCoast" colspan="5"></td>
+                                </tr>
                             </tfoot>
                         </table>
                     </div>
