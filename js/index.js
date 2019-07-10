@@ -90,7 +90,7 @@ function logIn() {
                 if (checkboxesChecked[i] === "A96"){
                   //  alert(96);
                     console.log(minPrice.a96.gasStation);
-                    $(".minPriceGasStation").append("<td class='text-danger'>" + minPrice.a96.gasStation + "</td><br>").val();
+                    $(".minPriceGasStation").append("<td class='text-danger'>" + minPrice.a96.gasStation + "  А96" + "</td><br>").val();
                     $(".minPriceGasStation").append("<td class='text-danger'>" + minPrice.a96.price + "</td><br>").val();
                     $("#coast_L").html(minPrice.a96.price).val();
                 }else if (checkboxesChecked[i] === "A95") {
