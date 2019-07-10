@@ -88,19 +88,29 @@ function logIn() {
                 if (checkboxesChecked[i] === "A96"){
                   //  alert(96);
                     let minPriceGasStation = $(".minPriceGasStation");
-                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a96.gasStation + "  А96            " + "</span>");
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a96.gasStation + "  А96" + "</span>");
                     minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a96.price + "</span>");
                 }else if (checkboxesChecked[i] === "A95") {
                     let minPriceGasStation = $(".minPriceGasStation");
-                    minPriceGasStation.append("<span class='text-danger'>" + minPrice.a95.gasStation + "</span><br>");
-                    minPriceGasStation.append("<span class='text-danger'>" + minPrice.a95.price + "</span><br>");
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a95.gasStation + "  А95" + "</span>");
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a95.price + "</span><br>");
                     //alert(95);
                 }else if (checkboxesChecked[i] === "A92" ) {
-                   // alert(92);
+                    let minPriceGasStation = $(".minPriceGasStation");
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a92.gasStation + "  А92" + "</span>");
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a92.price + "</span><br>");
+                    // alert(92);
                 }else if (checkboxesChecked[i] === "DT") {
-                   // alert("DT");
+                    let minPriceGasStation = $(".minPriceGasStation");
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.dt.gasStation + "  DT" + "</span>");
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.dt.price + "</span><br>");
+                    // alert("DT");
                 }else if (checkboxesChecked[i] === "LPG") {
-                   // alert("LPG");
+                    let minPriceGasStation = $(".minPriceGasStation");
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.lpg.gasStation + "  LPG" + "</span>");
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.lpg.price + "</span><br>");
+
+                    // alert("LPG");
                 }
             }
         }
