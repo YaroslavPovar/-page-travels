@@ -21,27 +21,25 @@ function setMinPrice(key, el) {
 function btnGet() {
     let sredniyRaskhodTopliva = $('#sredniy_raskhod_topliva').val(),
         diStance = $('#distance').val(),
-        coastL = parseFloat($('#coast_L').text()),
+        coastL = $('#coast_L').val(),
         howManyPeople = $('#how_many_people').val(),
         a,
         b,
         c;
 
 
-        a = sredniyRaskhodTopliva * diStance / 100;
-        $('.a').html(a);
-        b = coastL * a;
-        $('.b').html(b);
-        c = b / howManyPeople;
-        $('.c').html(c);
+    a = sredniyRaskhodTopliva * diStance / 100;
+    $('.a').html(a);
+    b = coastL * a;
+    $('.b').html(b);
+    c = b / howManyPeople;
+    $('.c').html(c);
 
-        console.log('sredniyRaskhodTopliva', sredniyRaskhodTopliva);
-        console.log('dist', diStance);
-        console.log('coast', coastL);
-        console.log(' howmany', howManyPeople);
+    console.log('sredniyRaskhodTopliva', sredniyRaskhodTopliva);
+    console.log('dist', diStance);
+    console.log('coast', coastL);
+    console.log('howmany', howManyPeople);
 }
-
-gasoline = [];
 $.get( "https://ironpeak.ua/petrol-price/", function( data ) {
     if(data) {
         data['data'].forEach(element => {
@@ -89,17 +87,13 @@ function logIn() {
             for (var i = 0; i < checkboxesChecked.length; i++){
                 if (checkboxesChecked[i] === "A96"){
                   //  alert(96);
-                    console.log(minPrice.a96.gasStation);
                     let minPriceGasStation = $(".minPriceGasStation");
-                    minPriceGasStation.append("<td class='text-danger'>" + minPrice.a96.gasStation + "  А96" + "</td><br>");
-                    minPriceGasStation.append("<td class='text-danger'>" + minPrice.a96.price + "</td><br>");
-                    $("#coast_L").text(minPrice.a96.price);
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a96.gasStation + "  А96            " + "</span>");
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a96.price + "</span>");
                 }else if (checkboxesChecked[i] === "A95") {
-                    console.log(minPrice.a95.gasStation);
                     let minPriceGasStation = $(".minPriceGasStation");
-                    minPriceGasStation.append("<td class='text-danger'>" + minPrice.a95.gasStation + "</td><br>");
-                    minPriceGasStation.append("<td class='text-danger'>" + minPrice.a95.price + "</td><br>");
-                    $("#coast_L").text(minPrice.a95.price);
+                    minPriceGasStation.append("<span class='text-danger'>" + minPrice.a95.gasStation + "</span><br>");
+                    minPriceGasStation.append("<span class='text-danger'>" + minPrice.a95.price + "</span><br>");
                     //alert(95);
                 }else if (checkboxesChecked[i] === "A92" ) {
                    // alert(92);
