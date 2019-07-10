@@ -21,7 +21,7 @@ function setMinPrice(key, el) {
 function btnGet() {
     let sredniyRaskhodTopliva = $('#sredniy_raskhod_topliva').val(),
         diStance = $('#distance').val(),
-        coastL = $('#coast_L').val(),
+        coastL = parseFloat($('#coast_L').text()),
         howManyPeople = $('#how_many_people').val(),
         a,
         b,
@@ -90,14 +90,16 @@ function logIn() {
                 if (checkboxesChecked[i] === "A96"){
                   //  alert(96);
                     console.log(minPrice.a96.gasStation);
-                    $(".minPriceGasStation").append("<td class='text-danger'>" + minPrice.a96.gasStation + "  А96" + "</td><br>").val();
-                    $(".minPriceGasStation").append("<td class='text-danger'>" + minPrice.a96.price + "</td><br>").val();
-                    $("#coast_L").html(minPrice.a96.price).val();
+                    let minPriceGasStation = $(".minPriceGasStation");
+                    minPriceGasStation.append("<td class='text-danger'>" + minPrice.a96.gasStation + "  А96" + "</td><br>");
+                    minPriceGasStation.append("<td class='text-danger'>" + minPrice.a96.price + "</td><br>");
+                    $("#coast_L").text(minPrice.a96.price);
                 }else if (checkboxesChecked[i] === "A95") {
                     console.log(minPrice.a95.gasStation);
-                    $(".minPriceGasStation").append("<td class='text-danger'>" + minPrice.a95.gasStation + "</td><br>").val();
-                    $(".minPriceGasStation").append("<td class='text-danger'>" + minPrice.a95.price + "</td><br>").val();
-                    $("#coast_L").html(minPrice.a95.price).val();
+                    let minPriceGasStation = $(".minPriceGasStation");
+                    minPriceGasStation.append("<td class='text-danger'>" + minPrice.a95.gasStation + "</td><br>");
+                    minPriceGasStation.append("<td class='text-danger'>" + minPrice.a95.price + "</td><br>");
+                    $("#coast_L").text(minPrice.a95.price);
                     //alert(95);
                 }else if (checkboxesChecked[i] === "A92" ) {
                    // alert(92);
