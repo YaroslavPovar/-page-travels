@@ -86,22 +86,25 @@ function logIn() {
     for (var index = 0; index < checkboxes.length; index++) {
         if (checkboxes[index].checked) {
             checkboxesChecked.push(checkboxes[index].value); // положим в массив выбранный
-            // alert(checkboxes[index].value); // делайте что нужно - это для наглядности
             for (var i = 0; i < checkboxesChecked.length; i++){
                 if (checkboxesChecked[i] === "A96"){
-                    alert(96);
+                  //  alert(96);
                     console.log(minPrice.a96.gasStation);
-                    $(".gasStation").append(minPrice.a96.gasStation).val();
-                    $(".gasPriceCoast").append(minPrice.a96.price).val();
+                    $(".minPriceGasStation").append("<td class='text-danger'>" + minPrice.a96.gasStation + "</td><br>").val();
+                    $(".minPriceGasStation").append("<td class='text-danger'>" + minPrice.a96.price + "</td><br>").val();
                     $("#coast_L").html(minPrice.a96.price).val();
                 }else if (checkboxesChecked[i] === "A95") {
-                    alert(95);
+                    console.log(minPrice.a95.gasStation);
+                    $(".minPriceGasStation").append("<td class='text-danger'>" + minPrice.a95.gasStation + "</td><br>").val();
+                    $(".minPriceGasStation").append("<td class='text-danger'>" + minPrice.a95.price + "</td><br>").val();
+                    $("#coast_L").html(minPrice.a95.price).val();
+                    //alert(95);
                 }else if (checkboxesChecked[i] === "A92" ) {
-                    alert(92);
+                   // alert(92);
                 }else if (checkboxesChecked[i] === "DT") {
-                    alert("DT");
+                   // alert("DT");
                 }else if (checkboxesChecked[i] === "LPG") {
-                    alert("LPG");
+                   // alert("LPG");
                 }
             }
         }
