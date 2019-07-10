@@ -35,11 +35,32 @@ function btnGet() {
     c = b / howManyPeople;
     $('.c').html(c);
 
-    console.log('sredniyRaskhodTopliva', sredniyRaskhodTopliva);
-    console.log('dist', diStance);
-    console.log('coast', coastL);
-    console.log('howmany', howManyPeople);
-}
+    // language=JQuery-CSS
+    $('.answer_miscalculation_response').css('display', 'block');
+} //Кнопка "РАССЧИТАТЬ" ("Стоимость путешествия")
+function clearCalc(){
+    $('input').val("");
+    $('.answer_miscalculation_response').css("display",'none');
+} //Кнопка "ОЧИСТИТЬ" ("Стоимость путешествия")
+//-----------------------------------------------------------------------------------------
+function btnGetTo() {
+    let fuel = $("#fuel"),
+        length = $("#how_distance"),
+        priceL = $("#price_l"),
+        aa,
+        b,
+        c;
+
+
+    aa = fuel / length;
+    console.log(aa);
+
+} //Кнопка "РАССЧИТАТЬ" ("Стоимость путешествия")
+function clearCalc(){
+    $('input').val("");
+    $('.answer_miscalculation_response').css("display",'none');
+} //Кнопка "ОЧИСТИТЬ" ("Стоимость путешествия")
+
 $.get( "https://ironpeak.ua/petrol-price/", function( data ) {
     if(data) {
         data['data'].forEach(element => {
@@ -118,3 +139,33 @@ function logIn() {
     return checkboxesChecked; // для использования в нужном месте
 
 }
+//____________________________________________________________________________________________________________________________________
+$(function() {
+    var Accordion = function(el, multiple) {
+        this.el = el || {};
+        // more then one submenu open?
+        this.multiple = multiple || false;
+
+        var dropdownlink = this.el.find('.dropdownlink');
+        dropdownlink.on('click',
+            { el: this.el, multiple: this.multiple },
+            this.dropdown);
+    };
+
+    Accordion.prototype.dropdown = function(e) {
+        var $el = e.data.el,
+            $this = $(this),
+            //this is the ul.submenuItems
+            $next = $this.next();
+
+        $next.slideToggle();
+        $this.parent().toggleClass('open');
+
+        if(!e.data.multiple) {
+            //show only one menu at the same time
+            $el.find('.submenuItems').not($next).slideUp().parent().removeClass('open');
+        }
+    }
+
+    var accordion = new Accordion($('.accordion-menu'), false);
+})

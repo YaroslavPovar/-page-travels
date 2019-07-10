@@ -9,6 +9,7 @@
 <!--    <script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>-->
 <!--    <link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />-->
     <link rel="stylesheet" href="css/index.css">
+<!--    <link rel="stylesheet" href="css/style.scss">-->
     <script src="js/jquery-3.3.1.js"></script>
 </head>
 <body>
@@ -23,10 +24,10 @@
 <div class="collapse navbar-collapse sticky-top" id="navbarSupportContent">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a href="ceny%20na%20ATHS.html" class="nav-link">Цены на АЗС</a>
+            <a href="" class="nav-link">Цены на АЗС</a>
         </li>
         <li class="nav-item">
-            <a href="marshrut.html" class="nav-link">Проложить маршрут</a>
+            <a href="" class="nav-link">Проложить маршрут</a>
         </li>
         <li class="nav-item">
             <a href="#" class="nav-link">О проекте</a>
@@ -58,43 +59,97 @@
         <div class="row justify-content-between">
             <div class="col-xs-12 col-sm-4 col-lg-2 calc-gass">
                 <h1>Калькулятор</h1>
-                <table>
-                    <tr>
-                        <td class="td-label">Средний расход топлива:</td>
-                        <td class="td-input"><input type="text" class="input-off" id="sredniy_raskhod_topliva"></td>
-                    </tr>
-                    <tr>
-                        <td class="td-label">Растояние:</td>
-                        <td class="td-input"><input type="text" class="input-off" id="distance"></td>
-                    </tr>
-                    <tr>
-                        <td class="td-label">Цена/L:</td>
-                        <td class="td-input"><input type="text" class="input-off" id="coast_L"></td>
-                    </tr>
-                    <tr>
-                        <td class="td-label">Число людей:</td>
-                        <td class="td-input"><input type="text" class="input-off" id="how_many_people"></td>
-                    </tr>
-                </table>
-                <hr>
-                <button class="btn btn-outline-success btn-lg btn-block" onclick="btnGet()">Рассчитать</button>
-                <hr>
-                <table>
-                    <tr>
-                        <td class="td-label">Необходимое количество топлива:</td>
-                        <td class="td-span"><span class="a"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="td-label">Стоимость поездки:</td>
-                        <td class="td-span"><span class="b"></span></td>
-                    </tr>
-                    <tr>
-                        <td class="td-label">На человека:</td>
-                        <td class="td-span"><span class="c"></span></td>
-                    </tr>
-                </table>
+                <ul class="accordion-menu">
+                    <li>
+                        <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i> Стоимость путешествия
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <ul class="submenuItems">
+                            <table>
+                                <tr>
+                                    <td class="td-input"><input type="text" class="input-off" id="sredniy_raskhod_topliva" placeholder="Средний расход топлива:"></td>
+                                </tr>
+                                <tr>
+                                    <td class="td-input"><input type="text" class="input-off" id="distance" placeholder="Растояние:"></td>
+                                </tr>
+                                <tr>
+                                    <td class="td-input"><input type="text" class="input-off" id="coast_L" placeholder="Цена/L:"></td>
+                                </tr>
+                                <tr>
+                                    <td class="td-input"><input type="text" class="input-off" id="how_many_people" placeholder="Число людей:"></td>
+                                </tr>
+                            </table>
+                            <hr>
+                            <button class="btn btn-outline-success btn-sm" style="float: left" onclick="btnGet()">Рассчитать</button>
+                            <button class="btn btn-outline-success btn-sm" onclick="clearCalc()" style="float: right">Очистить</button>
+                            <div class="clear" style="clear: both"></div>
+                            <hr>
+                            <table class="answer_miscalculation_response" style="display: none">
+                                <tr>
+                                    <td class="td-label">Необходимое количество топлива:</td>
+                                    <td class="td-span"><span class="a"></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td-label">Стоимость поездки:</td>
+                                    <td class="td-span"><span class="b"></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="td-label">На человека:</td>
+                                    <td class="td-span"><span class="c"></span></td>
+                                </tr>
+                            </table>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="dropdownlink"><i class="fa fa-paper-plane" aria-hidden="true"></i> Потребление топлива
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <ul class="submenuItems">
+                            <table>
+                                <tr>
+                                    <td class="td-input"><input type="text" class="input-off" id="fuel" placeholder="Топливо:"></td>
+                                </tr>
+                                <tr>
+                                    <td class="td-input"><input type="text" class="input-off" id="how_distance" placeholder="Расстояние:"></td>
+                                </tr>
+                                <tr>
+                                    <td class="td-input"><input type="text" class="input-off" id="price_l" placeholder="Цена / L (по желанию):"></td>
+                                </tr>
+                            </table>
+                            <hr>
+                            <button class="btn btn-outline-success btn-sm" style="float: left" onclick="btnGetTo()">Рассчитать</button>
+                            <button class="btn btn-outline-success btn-sm" onclick="clearCalcTo()" style="float: right">Очистить</button>
+                            <div class="clear" style="clear: both"></div>
+                            <hr>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="dropdownlink"><i class="fa fa-quote-left" aria-hidden="true"></i> Fantasy
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <ul class="submenuItems">
+                            <li><a href="#">Fantasy book 1</a></li>
+                            <li><a href="#">Fantasy book 2</a></li>
+                            <li><a href="#">Fantasy book 3</a></li>
+                        </ul>
+                    </li>
+<!--                    <li>-->
+<!--                        <div class="dropdownlink"><i class="fa fa-motorcycle" aria-hidden="true"></i> Action-->
+<!--                            <i class="fa fa-chevron-down" aria-hidden="true"></i>-->
+<!--                        </div>-->
+<!--                        <ul class="submenuItems">-->
+<!--                            <li><a href="#">Action book 1</a></li>-->
+<!--                            <li><a href="#">Action book 2</a></li>-->
+<!--                            <li><a href="#">Action book 3</a></li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+                </ul>
+
+<!--            __________________________________________________________________________________________-->
 
             </div>
+<!--            _____________________________________________________________________________-->
             <div class="col-xs-12 col-sm-4 col-lg-6 car-shar">
                 <h1>Google maps</h1>
                 <div id='map'><iframe class="g-maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5440401.950425513!2d26.689956738919847!3d48.255785946278884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d1d9c154700e8f%3A0x1068488f64010!2z0KPQutGA0LDQuNC90LA!5e0!3m2!1sru!2sua!4v1561925296251!5m2!1sru!2sua" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -127,8 +182,14 @@
         </div>
     </div>
 </div>
-<div class="container-fluid footer">
-
+<div class="container-fluid footer position-static">
+    <ul>
+        <li><a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-telegram fa-lg" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a></li>
+    </ul>
 </div>
 
 <!--ВХОД-->
@@ -174,17 +235,6 @@
                 <button class="btn btn-outline-success" data-dismiss="modal" type="button" onclick="logIn()">Вход</button>
             </div>
         </div>
-    </div>
-</div>
-<div class="container-fluid">
-    <div class="container footer">
-        <ul>
-            <li><a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-telegram fa-lg" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a></li>
-        </ul>
     </div>
 </div>
 
