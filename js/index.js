@@ -44,19 +44,21 @@ function clearCalc(){
 } //Кнопка "ОЧИСТИТЬ" ("Стоимость путешествия")
 //-----------------------------------------------------------------------------------------
 function btnGetTo() {
-    let fuel = $("#fuel"),
-        length = $("#how_distance"),
-        priceL = $("#price_l"),
-        aa,
-        b,
-        c;
+    let fuel = $("#fuel").val(),
+        length = $("#how_distance").val(),
+        priceL = $("#price_l").val(),
+        resultOne,
+        resultTwo;
+    resultOne = fuel / length *100;
+    resultTwo = resultOne * priceL;
+    console.log("result", resultOne);
+    console.log("result", resultTwo);
 
+    $('.answer_miscalculation_response').css('display', 'block');
 
-    aa = fuel / length;
-    console.log(aa);
 
 } //Кнопка "РАССЧИТАТЬ" ("Стоимость путешествия")
-function clearCalc(){
+function clearCalcTo(){
     $('input').val("");
     $('.answer_miscalculation_response').css("display",'none');
 } //Кнопка "ОЧИСТИТЬ" ("Стоимость путешествия")
