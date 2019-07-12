@@ -36,7 +36,8 @@ function btnGet() {
     $('.c').html(c);
 
     // language=JQuery-CSS
-    $('.answer_miscalculation_response').css('display', 'block');
+   // $('.answer_miscalculation_response').css('display', 'block');
+    $(".answer_miscalculation_response").show(1000);
 } //Кнопка "РАССЧИТАТЬ" ("Стоимость путешествия")
 function clearCalc(){
     $('input').val("");
@@ -109,31 +110,27 @@ function logIn() {
             checkboxesChecked.push(checkboxes[index].value); // положим в массив выбранный
             for (var i = 0; i < checkboxesChecked.length; i++){
                 if (checkboxesChecked[i] === "A96"){
-                  //  alert(96);
                     let minPriceGasStation = $(".minPriceGasStation");
-                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a96.gasStation + "  А96" + "</span>");
                     minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a96.price + "</span>");
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + "<span class='text-danger'>А96</span>" + minPrice.a96.gasStation + "</span>");
                 }else if (checkboxesChecked[i] === "A95") {
                     let minPriceGasStation = $(".minPriceGasStation");
-                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a95.gasStation + "  А95" + "</span>");
-                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a95.price + "</span><br>");
-                    //alert(95);
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a95.price + "</span>");
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a95.gasStation + "<span class='text-danger'>А95</span>" + "</span>");
                 }else if (checkboxesChecked[i] === "A92" ) {
                     let minPriceGasStation = $(".minPriceGasStation");
-                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a92.gasStation + "  А92" + "</span>");
-                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a92.price + "</span><br>");
-                    // alert(92);
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a92.price + "</span>");
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.a92.gasStation + "<span class='text-danger'>А92</span>" + "</span>");
                 }else if (checkboxesChecked[i] === "DT") {
                     let minPriceGasStation = $(".minPriceGasStation");
-                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.dt.gasStation + "  DT" + "</span>");
-                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.dt.price + "</span><br>");
-                    // alert("DT");
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.dt.price + "</span>");
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.dt.gasStation + "<span class='text-danger'>DT</span>" + "</span>");
                 }else if (checkboxesChecked[i] === "LPG") {
                     let minPriceGasStation = $(".minPriceGasStation");
-                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.lpg.gasStation + "  LPG" + "</span>");
-                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.lpg.price + "</span><br>");
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.lpg.price + "</span>");
+                    minPriceGasStation.append("<span class='text-danger' style='display: block'>" + minPrice.lpg.gasStation + "<span class='text-danger'>LPG</span>" + "</span>");
 
-                    // alert("LPG");
+
                 }
             }
         }
