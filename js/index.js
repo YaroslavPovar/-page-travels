@@ -95,8 +95,18 @@ function logIn() {
             }
         }
     }console.log('checkboxesChecked', checkboxesChecked);
-    return checkboxesChecked; // для использования в нужном месте
 
+
+    let login = $('#exampleInputEmail').val(),
+        password = $('#exampleInputPass').val();
+
+    localStorage.setItem(login, password);
+    localStorage.setItem('check', checkboxesChecked);
+    console.log(login);
+    console.log(password);
+
+
+    return checkboxesChecked; // для использования в нужном месте
 } // КНОПКА "ВХОД"
 //____________________________________________________________________________________________________________________________________
 $(function() {
