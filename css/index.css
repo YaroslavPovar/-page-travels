@@ -249,7 +249,9 @@ h2 {
     float: left;
     margin: 0 6px;
 }
-
+.can-sort{
+    cursor: pointer;
+}
 
 
 

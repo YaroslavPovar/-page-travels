@@ -16,53 +16,9 @@ function setMinPrice(key, el) {
             minPrice[key]["price"] = el[key];
         }
     }
-}
-
-function btnGet() {
-    let sredniyRaskhodTopliva = $('#sredniy_raskhod_topliva').val(),
-        diStance = $('#distance').val(),
-        coastL = $('#coast_L').val(),
-        howManyPeople = $('#how_many_people').val(),
-        a,
-        b,
-        c;
+} // МИН.ЦЕНА
 
 
-    a = sredniyRaskhodTopliva * diStance / 100;
-    $('.a').html(a);
-    b = coastL * a;
-    $('.b').html(b);
-    c = b / howManyPeople;
-    $('.c').html(c);
-
-    // language=JQuery-CSS
-   // $('.answer_miscalculation_response').css('display', 'block');
-    $(".answer_miscalculation_response").show(1000);
-} //Кнопка "РАССЧИТАТЬ" ("Стоимость путешествия")
-function clearCalc(){
-    $('input').val("");
-    $('.answer_miscalculation_response').css("display",'none');
-} //Кнопка "ОЧИСТИТЬ" ("Стоимость путешествия")
-//-----------------------------------------------------------------------------------------
-function btnGetTo() {
-    let fuel = $("#fuel").val(),
-        length = $("#how_distance").val(),
-        priceL = $("#price_l").val(),
-        resultOne,
-        resultTwo;
-    resultOne = fuel / length *100;
-    resultTwo = resultOne * priceL;
-    console.log("result", resultOne);
-    console.log("result", resultTwo);
-
-    $('.answer_miscalculation_response').css('display', 'block');
-
-
-} //Кнопка "РАССЧИТАТЬ" ("Стоимость путешествия")
-function clearCalcTo(){
-    $('input').val("");
-    $('.answer_miscalculation_response').css("display",'none');
-} //Кнопка "ОЧИСТИТЬ" ("Стоимость путешествия")
 
 $.get( "https://ironpeak.ua/petrol-price/", function( data ) {
     if(data) {
@@ -83,6 +39,9 @@ $.get( "https://ironpeak.ua/petrol-price/", function( data ) {
             var tdLPG = document.createElement("td");
 
 
+
+
+
             $(td).text(element['gasStation']);
             $(tda96).text(element['a96']);
             $(tda95).text(element['a95']);
@@ -99,8 +58,9 @@ $.get( "https://ironpeak.ua/petrol-price/", function( data ) {
 
             $(".result table").append(tr)
         });
+        
     }
-});
+}); //ЦЕНЫ НА ТОПЛИВО
 
 function logIn() {
     let checkboxes = $('.checkbox');
@@ -137,7 +97,7 @@ function logIn() {
     }console.log('checkboxesChecked', checkboxesChecked);
     return checkboxesChecked; // для использования в нужном месте
 
-}
+} // КНОПКА "ВХОД"
 //____________________________________________________________________________________________________________________________________
 $(function() {
     var Accordion = function(el, multiple) {
@@ -167,4 +127,48 @@ $(function() {
     }
 
     var accordion = new Accordion($('.accordion-menu'), false);
-})
+}) //ВЫПАДАЮЩЕЕ МЕНЮ КАЛЬКУЛЯТОРОВ
+
+function btnGet() {
+    let sredniyRaskhodTopliva = $('#sredniy_raskhod_topliva').val(),
+        diStance = $('#distance').val(),
+        coastL = $('#coast_L').val(),
+        howManyPeople = $('#how_many_people').val(),
+        a,
+        b,
+        c;
+
+
+    a = sredniyRaskhodTopliva * diStance / 100;
+    $('.a').html(a);
+    b = coastL * a;
+    $('.b').html(b);
+    c = b / howManyPeople;
+    $('.c').html(c);
+
+    $(".answer_miscalculation_response").show(1000);
+} //Кнопка "РАССЧИТАТЬ" ("Стоимость путешествия") КАКЛЬКУЛЯТОР
+function clearCalc(){
+    $('input').val("");
+    $(".answer_miscalculation_response").hide(1000);
+} //Кнопка "ОЧИСТИТЬ" ("Стоимость путешествия") КАКЛЬКУЛЯТОР
+function btnGetTo() {
+    let fuel = $("#fuel").val(),
+        length = $("#how_distance").val(),
+        priceL = $("#price_l").val(),
+        resultOne,
+        resultTwo;
+    resultOne = fuel / length *100;
+    resultTwo = resultOne * priceL;
+    console.log("result", resultOne);
+    console.log("result", resultTwo);
+    $(".answer_miscalculation_response").show(1000);
+    // $('.answer_miscalculation_response').css('display', 'block');
+
+
+} //Кнопка "РАССЧИТАТЬ" ("Потребление топлива") КАКЛЬКУЛЯТОР
+function clearCalcTo(){
+    $('input').val("");
+    $(".answer_miscalculation_response").hide(1000);
+} //Кнопка "ОЧИСТИТЬ" ("Потребление топлива") КАКЛЬКУЛЯТОР
+

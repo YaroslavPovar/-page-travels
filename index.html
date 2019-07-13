@@ -54,7 +54,7 @@
                         <ul class="submenuItems">
                             <table>
                                 <tr>
-                                    <td class="td-input"><img src="https://img.icons8.com/ios/25/000000/average-2.png" class="img_icons"><input type="text" class="input-off" id="sredniy_raskhod_topliva" placeholder="Средний расход топлива:"></td>
+                                    <td class="td-input"><img src="https://img.icons8.com/ios/25/000000/average-2.png" class="img_icons"><input type="text" class="input-off" id="sredniy_raskhod_topliva" placeholder="Средний расход топлива:" pattern="^[ 0-9]+$"></td>
                                 </tr>
                                 <tr>
                                     <td class="td-input"><img src="https://img.icons8.com/ios/25/000000/ruler.png" class="img_icons"><input type="text" class="input-off" id="distance" placeholder="Растояние:"></td>
@@ -129,14 +129,15 @@
 
 <!--            __________________________________________________________________________________________-->
 
-            </div>
-<!--            _____________________________________________________________________________-->
+            </div> <!--КАЛЬКУЛЯТОР-->
+<!--            ________________________________________________________________________________________________________________________-->
             <div class="col-xs-12 col-sm-4 col-lg-6">
                 <h1>Google maps</h1>
                 <div id='map'><iframe class="g-maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5440401.950425513!2d26.689956738919847!3d48.255785946278884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d1d9c154700e8f%3A0x1068488f64010!2z0KPQutGA0LDQuNC90LA!5e0!3m2!1sru!2sua!4v1561925296251!5m2!1sru!2sua" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
 
-            </div>
+            </div> <!--G-MAP-->
+<!--            ________________________________________________________________________________________________________________________-->
             <div class="col-xs-12 col-sm-4 col-lg-4 bg_div coast-gass">
                 <div class="container containerPaddingNone">
                     <h1>Цены на топливо</h1>
@@ -144,12 +145,12 @@
                         <table class="table-hover table-responsive ">
                             <thead class="position-static bg-white">
                             <tr>
-                                <th scope="col">Gas station</th>
-                                <th scope="col">A96</th>
-                                <th scope="col">A95</th>
-                                <th scope="col">A92</th>
-                                <th scope="col">DT</th>
-                                <th scope="col">LPG</th>
+                                <th scope="col" class="can-sort" onclick="sortPrise()">ЗАПРАВКА</th>
+                                <th scope="col" class="can-sort" onclick="sortPrise()">A96</th>
+                                <th scope="col" class="can-sort" onclick="sortPrise()">A95</th>
+                                <th scope="col" class="can-sort" onclick="sortPrise()">A92</th>
+                                <th scope="col" class="can-sort" onclick="sortPrise()">ДТ</th>
+                                <th scope="col" class="can-sort" onclick="sortPrise()">ГАЗ</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -158,10 +159,9 @@
                         </table>
                     </div>
                 </div>
-                <div class="container minPriceGasStation">
-                    <p>Минимальная цена:</p>
-                </div>
-            </div>
+                <div class="container"><div class="container minPriceGasStation"><p>Минимальная цена:</p></div></div>
+
+            </div> <!--СПИСОК ЗАПРАВОК + ЦЕНЫ НА БЕНЗИН-->
         </div>
     </div>
 </div>
@@ -175,7 +175,7 @@
     </ul>
 </div>
 
-<!--ВХОД-->
+<!--МОДАЛЬНОЕ ОКНО-->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
